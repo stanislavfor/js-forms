@@ -60,10 +60,12 @@ $(document).ready(function(){
 				}
 
 			$('#inputEmailName').on('focus', function(){
-						_error.fadeOut();												
+						_error.fadeOut();
+						_errorDescriptionDesc.fadeOut();												
 					});	
 			$('#inputPasswordName').on('focus', function(){
 						_error.fadeOut();
+						_errorDescriptionDesc.fadeOut();	
 					});	
 			}
 		
