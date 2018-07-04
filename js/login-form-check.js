@@ -4,7 +4,9 @@ $(document).ready(function(){
 
 		// Переменные модуля
 		var _loginForm = $('#login-add-form');
+
 		var _inputEmailName = $('[name="name"]');
+
 		var _errorMail = $('#errorMail');
 		var	_patternEmail = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
 		var _errorMailFormat = $('#errorMailFormat')
@@ -26,7 +28,6 @@ $(document).ready(function(){
 				_formValidate(event);
 			});
 		}
-		
 
 		// Приватные методы
 		var _formValidate = function (event) {
@@ -39,6 +40,7 @@ $(document).ready(function(){
 					if ( _inputEmailName.val() == ''	) { 
 							_errorMail.fadeIn(1000);
 					} else {
+
 							if ( _patternEmail.test( _emailName )) {
 									console.log('Hello from  _patternEmail.test');
 
@@ -75,6 +77,7 @@ $(document).ready(function(){
 									_errorDescriptionDesc.fadeOut();	
 								});	
 						}
+
 		
 		
 		

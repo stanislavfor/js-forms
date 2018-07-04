@@ -4,7 +4,9 @@ $(document).ready(function(){
 
 		// Переменные модуля
 		var _loginForm = $('#register-add-form');
-		var _inputEmailName = $('#inputEmailName');
+
+		var _inputEmailName = $('[name="name"]');
+
 		var _errorMail = $('#errorMail');
 		var	_patternEmail = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
 		var _errorMailFormat = $('#errorMailFormat')
