@@ -4,7 +4,9 @@ $(document).ready(function(){
 
 		// Переменные модуля
 		var _loginForm = $('#login-add-form');
-		var _inputEmailName = $('#inputEmailName');
+
+		var _inputEmailName = $('[name="name"]');
+
 		var _errorMail = $('#errorMail');
 		var	_patternEmail = /^([a-z0-9_\.-])+@[a-z0-9-]+\.([a-z]{2,4}\.)?[a-z]{2,4}$/i;
 		var _errorMailFormat = $('#errorMailFormat')
@@ -38,35 +40,44 @@ $(document).ready(function(){
 					if ( _inputEmailName.val() == ''	) { 
 							_errorMail.fadeIn(1000);
 					} else {
-						if ( _patternEmail.test( _emailName )) {
-								console.log('Hello from  _patternEmail.test');
-								if ( _emailName == "mail@mail.com" && _passwordName == "123" ) {
-												_loginForm.unbind('submit').submit();
+
+							if ( _patternEmail.test( _emailName )) {
+									console.log('Hello from  _patternEmail.test');
+
+									if ( _inputPasswordName.val() !== ''	) {
+											if ( _emailName == "mail@mail.com" && _passwordName == "123" ) {
+													_loginForm.unbind('submit').submit();
 											} else {
-											_errorDescription.fadeIn(1000);
-											_errorDescriptionDesc.fadeIn(1000);
-											event.preventDefault();	
+													_errorDescription.fadeIn(1000);
+													_errorDescriptionDesc.fadeIn(1000);
+													event.preventDefault();	
 											}	
-									} else {
-										_errorMailFormat.fadeIn(1000);
 									}
-								}	if ( _inputPasswordName.val() == ''	) {
-										_errorPassword.fadeIn(1000);
-										event.preventDefault();
-								} else {
-										_errorPassword.fadeOut();			
+
+							} else {
+								_errorMailFormat.fadeIn(1000);
 							}
 
+						}	
 
-					$('#inputEmailName').on('focus', function(){
-								_error.fadeOut();
-								_errorDescriptionDesc.fadeOut();												
-							});	
-					$('#inputPasswordName').on('focus', function(){
-								_error.fadeOut();
-								_errorDescriptionDesc.fadeOut();	
-							});	
-				}
+						if ( _inputPasswordName.val() == ''	) {
+								_errorPassword.fadeIn(1000);
+								event.preventDefault();
+						} else {
+								_errorPassword.fadeOut();			
+						}
+
+
+						$('#inputEmailName').on('focus', function(){
+									_error.fadeOut();
+									_errorDescriptionDesc.fadeOut();												
+								});	
+						$('#inputPasswordName').on('focus', function(){
+									_error.fadeOut();
+									_errorDescriptionDesc.fadeOut();	
+								});	
+						}
+
 		
 		
 		
